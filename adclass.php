@@ -32,6 +32,42 @@ class Anuncios {
      }
 
 
+     public function conectarse()
+
+{
+
+$servidor = "localhost";
+$usuario = "root";
+$password = "";
+$bd="phpclases";
+$conectar = new mysqli($servidor,$usuario,$password,$bd) or die ("No se pudo conectar al servidor de BD Mysql");
+
+return $conectar;
+
+}
+
+     public function registrarAnuncioBd(){
+
+     $conexion = $this->conectarse();
+     $consulta = "INSERT INTO anuncios(titulo,texto,autor) VALUES ('$this->tituloAnuncio','$this->textoAnuncio','$this->autor')";
+     $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
+
+     if ($ejecutar_consulta){
+
+          echo "Se ha publicado el anuncio correctamente";
+
+     } else{
+
+
+        echo "Ha ocurrido un problema de conexión a la base de datos";
+
+     }
+        
+
+
+     }
+
+
 }
 
 

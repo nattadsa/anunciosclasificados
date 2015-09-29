@@ -23,7 +23,25 @@ echo "Bienvenido al sistema " . $_SESSION['loginuser']->nombre . " " . $_SESSION
 
 <h2><a href="crear-anuncio.php">Crear anuncio</a></h2>
 
+<?php
 
+
+if($_GET["anuncio"]=="publicado"){
+
+
+echo "Su anuncio fué publicado con éxito";
+
+}
+
+
+
+
+
+
+
+
+
+?>
 
 
 

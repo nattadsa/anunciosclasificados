@@ -18,28 +18,17 @@ $nuevoanuncio = new Anuncios();
 $autor = $_SESSION['loginuser']->nombre . " " . $_SESSION['loginuser']->apellido;
 
 
+if($_GET["anuncio"]=="revisar"){
 
 
-
-
-if (isset($_POST["titulo_txt"])){
-
-$posttitulo = $_POST["titulo_txt"];
-$posttexto = $_POST["texto_txt"];
-
-
-
-$nuevoanuncio->crearDatosAnuncio($posttitulo,$posttexto,$autor);
-
-$nuevoanuncio->mostrarDatosAnuncio();
-
-
-
-
-
-
+echo "Por favor revise los datos de su anuncio";
 
 }
+
+
+
+
+
 
 
 
@@ -74,6 +63,45 @@ $nuevoanuncio->mostrarDatosAnuncio();
 
 
 </form>
+
+<br>
+
+<?php
+
+if (isset($_POST["titulo_txt"])){
+
+$posttitulo = $_POST["titulo_txt"];
+$posttexto = $_POST["texto_txt"];
+
+
+
+$nuevoanuncio->crearDatosAnuncio($posttitulo,$posttexto,$autor);
+
+$_SESSION['anuncionew'] = $nuevoanuncio ;
+
+$nuevoanuncio->mostrarDatosAnuncio(); 
+
+
+echo "<br>¿Desea publicar estos datos?";
+
+echo '<form name="confirmacionanuncios_frm" id="confirmformanun" action="validacionanuncio.php"  method="GET" enctype="application/x-www-form-urlencoded">
+  
+<input type="submit" id="aceptarbtnan" name="aceptarbtnan" value="aceptar"/>
+
+<input type="submit" id="cancelarbtnan" name="cancelarbtnan" value="cancelar"/></form>';
+
+
+
+}
+
+
+
+
+
+
+
+
+?>
 
 
 
