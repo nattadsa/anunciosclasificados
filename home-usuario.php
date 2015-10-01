@@ -1,8 +1,10 @@
 <?php
 
-
+include("header.php");
 
 include("clases.php");
+
+include("adclass.php");
 
 include("confirmacionlog.php");
 
@@ -35,6 +37,9 @@ echo "Su anuncio fué publicado con éxito";
 
 
 
+$consultaads = new Anuncios();
+
+$consultaads->obtenerAnunciosDeBd();
 
 
 
@@ -46,4 +51,58 @@ echo "Su anuncio fué publicado con éxito";
 
 
 
-<a href="salir.php">Salir del sistema</a>
+
+
+
+<?php include("footer.php"); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

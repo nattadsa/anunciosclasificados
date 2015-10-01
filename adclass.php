@@ -24,10 +24,10 @@ class Anuncios {
      public function mostrarDatosAnuncio(){
 
 
-        echo "Titulo: " . $this->tituloAnuncio . "<br>";
-        echo "Anuncio: " . $this ->textoAnuncio .  "<br>";
+        echo "<b>Titulo:</b> " . $this->tituloAnuncio . "<br>";
+        echo "<b>Anuncio:</b> " . $this ->textoAnuncio .  "<br>";
 
-        echo "Autor:  " . $this ->autor . "<br>";
+        echo "<b><Autor:</b>" . $this ->autor . "<br>";
 
      }
 
@@ -49,6 +49,7 @@ return $conectar;
      public function registrarAnuncioBd(){
 
      $conexion = $this->conectarse();
+     $conexion->query("SET NAMES 'utf8'");
      $consulta = "INSERT INTO anuncios(titulo,texto,autor) VALUES ('$this->tituloAnuncio','$this->textoAnuncio','$this->autor')";
      $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
 
@@ -63,6 +64,51 @@ return $conectar;
 
      }
         
+
+
+     }
+
+     public function obtenerAnunciosDeBd() {
+    
+
+              $conexion = $this->conectarse();
+              $consulta = "SELECT * FROM anuncios ORDER BY anuncioid DESC limit 7";
+              $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
+              
+
+             echo '<div class="row">';
+
+              while ($resultado = $ejecutar_consulta->fetch_assoc()) {
+               
+                 
+                
+                echo '
+	
+	               <div class="col-lg-4 anuncios">
+
+	                   <h3>' .$resultado["titulo"] . '</h3>
+	      	
+	                   <p>' . $resultado["texto"]. '</p>
+
+	                   <p><b>' . $resultado["autor"]. '</b></p>
+	      	
+
+	              </div>
+
+                  
+
+
+              ';
+
+             
+               }
+
+               echo '</div>';
+
+             
+
+              
+
 
 
      }

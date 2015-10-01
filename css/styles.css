@@ -1,0 +1,133 @@
+#header {
+
+background-color: #FE9A2E;
+
+
+
+}
+
+#rightregpanel {
+
+text-align: right;
+
+
+
+
+}
+
+#rightsalirpanel {
+
+text-align: right;
+
+
+}
+
+#rightprinpanel {
+
+text-align: right;
+
+
+}
+
+#righthomepanel {
+
+text-align: right;
+
+
+}
+
+
+
+.botones {
+
+margin-right: 30px;
+margin-top: 20px;
+
+
+}
+
+
+#titulo {
+
+padding:25px;
+
+
+}
+
+#logform {
+
+padding: 25px;
+
+
+}
+
+#regform {
+
+padding: 25px;
+
+
+}
+
+.anuncios {
+
+border-style: solid;
+height:250px;
+
+
+
+}
+
+
+
+#adsendbutton {
+
+text-align: center;
+
+
+}
+
+#anunciosformrow {
+
+margin-top: 30px;
+
+
+}
+
+#texto {
+
+width: 100%;
+
+}
+
+#titulo {
+
+width: 100%;
+
+}
+
+#footer {
+
+
+background-color: black;
+padding:25px;
+margin-top: 400px;
+
+}
+
+#confirmacionad {
+
+padding:40px;
+text-align: justify;
+
+
+
+
+}
+
+#registrocfrm {
+
+padding:25px;
+
+
+
+}

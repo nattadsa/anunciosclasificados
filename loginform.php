@@ -1,5 +1,16 @@
-<?php include("header.php"); ?>
+<?php include("header.php");
 
+
+error_reporting(E_ALL ^ E_NOTICE);
+
+ ?>
+
+
+<div class="row" id="logform">
+
+<div class="col-md-4"></div>
+
+<div class="col-md-4">
 
 <form  name="formulario_txt" method="POST" action="login.php" enctype="application/x-www-form-urlencoded">
 
@@ -39,9 +50,24 @@
 
 
 
-<a href="salir.php">Salir del sistema</a>
 
 
+</div>
+
+
+<div class="col-md-4"></div>
+
+</div>
+
+<?php
+
+if($_GET["usuario"]=="noencontrado"){
+
+echo "Datos de ingreso incorrectos, verífiquelos o registrese antes de ingresar al sistema.";
+
+}
+
+?>
 
 
 

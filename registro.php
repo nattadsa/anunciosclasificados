@@ -1,4 +1,8 @@
- <?php include("header.php");?>
+ <?php include("header.php");
+
+
+
+ ?>
 
  <?php
 
@@ -14,11 +18,7 @@ include("clases.php");
 
 $usuarionuevo = new Usuario();
 $usuarionuevo->registro($postnombre,$postapellido,$postcorreo,$postusuario,$postpass);
-$usuarionuevo->mostrardatos();
 
-session_start();
-
-$_SESSION['usuarionuevo']  = $usuarionuevo;
 
 
 
@@ -27,6 +27,17 @@ $_SESSION['usuarionuevo']  = $usuarionuevo;
 
 ?>
 
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4" id="registrocfrm">
+
+<?php $usuarionuevo->mostrardatos();
+
+session_start();
+
+$_SESSION['usuarionuevo']  = $usuarionuevo;
+
+?>
 
 <p>¿Sus datos están correctos?</p>
 
@@ -42,9 +53,10 @@ $_SESSION['usuarionuevo']  = $usuarionuevo;
 
 
 </form>
+</div>
+<div class="col-md-4"></div>
 
-
-
+</div>
 
 
 

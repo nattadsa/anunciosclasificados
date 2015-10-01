@@ -9,6 +9,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 
  include("header.php");
+ include("adclass.php");
 
  if($_GET["mensaje"]=="si"){
 
@@ -23,14 +24,24 @@ error_reporting(E_ALL ^ E_NOTICE);
 
  ?>
 
- <h1>Bienvenido al sistema</h1>
+ <h3>Bienvenido al sistema</h3>
 
- <a href="loginform.php">Ingresar</a>
+ 
+
+ <br><br>
+
+<?php
 
 
- <a href="registroform.php">Registrarse</a>
+$consultaads = new Anuncios();
+
+echo "<h2>Ultimos anuncios publicados</h2>";
 
 
+
+$consultaads->obtenerAnunciosDeBd();
+
+?>
 
 
 

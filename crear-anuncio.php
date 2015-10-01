@@ -34,7 +34,11 @@ echo "Por favor revise los datos de su anuncio";
 
 ?>
 
+<div class="row" id="anunciosformrow">
 
+<div class="col-md-4"></div>
+
+<div class="col-md-4" id="adform">
 
 <form name="anuncio_frm" id="anunciofrm" method="POST" enctype="application/x-www-form-urlencoded">
 
@@ -55,7 +59,7 @@ echo "Por favor revise los datos de su anuncio";
  
 <tr>
 
-<td><input type="submit" id="enviar-anuncio" name="enviar-anuncio-btn" value="enviar"/></td>
+<th></th><td id="adsendbutton"><input type="submit" id="enviar-anuncio" name="enviar-anuncio-btn" value="enviar"/></td>
 	
 </tr>
 
@@ -63,6 +67,12 @@ echo "Por favor revise los datos de su anuncio";
 
 
 </form>
+
+</div>
+
+<div class="col-md-4"></div>
+
+</div>
 
 <br>
 
@@ -79,8 +89,16 @@ $nuevoanuncio->crearDatosAnuncio($posttitulo,$posttexto,$autor);
 
 $_SESSION['anuncionew'] = $nuevoanuncio ;
 
-$nuevoanuncio->mostrarDatosAnuncio(); 
 
+
+?>
+
+<div class="row" >
+<div class="col-md-4"></div>
+<div class="col-md-4" id="confirmacionad">
+<?php
+
+$nuevoanuncio->mostrarDatosAnuncio(); 
 
 echo "<br>¿Desea publicar estos datos?";
 
@@ -93,16 +111,10 @@ echo '<form name="confirmacionanuncios_frm" id="confirmformanun" action="validac
 
 
 }
-
-
-
-
-
-
-
-
 ?>
-
+</div>
+<div class="col-md-4"></div>
+</div>
 
 
 

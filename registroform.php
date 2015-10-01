@@ -32,6 +32,11 @@ if($_GET["vd"]=="si") {
 
 
 
+<div class="row" id="regform">
+
+<div class="col-md-4"></div>
+
+<div class="col-md-4">
 
 
 <form  name="formulario_txt" method="POST" action="registro.php" enctype="application/x-www-form-urlencoded">
@@ -77,12 +82,16 @@ if($_GET["vd"]=="si") {
 
 </fieldset>
 
+</div>
 
 
+<div class="col-md-4"></div>
 
 </form>
 
-<a href="salir.php">Salir del sistema</a>
+</div>
+
+
 
 
 

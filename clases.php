@@ -54,7 +54,7 @@ return $conectar;
 
  public function mostrardatos(){
 
-          echo "Nombre: " . $this->nombre . "<br>" . "Apellido: " . $this->apellido . "<br>" . "Correo electrónico: " . $this->correo . "<br>" . "Nombre de Usuario: ". $this->usuario ; 
+          echo "<b>Nombre: </b>" . $this->nombre . "<br>" . "<b>Apellido:</b>" . $this->apellido . "<br>" . "<b>Correo electrónico:</b> " . $this->correo . "<br>" . "<b>Nombre de Usuario: </b>". $this->usuario ; 
 
 
  }
@@ -77,7 +77,7 @@ $ejecutarConsultaUsuario = $conexion->query(utf8_encode($consultaUsuario));
 
 
         } else {
-
+              $conexion->query("SET NAMES 'utf8'");
               $consulta = "INSERT INTO phpclases_table(nombre,apellido,email,usuario,password) VALUES ('$this->nombre','$this->apellido','$this->correo','$this->usuario','$this->password')";
               $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
 
@@ -168,7 +168,7 @@ if($ejecutarConsultaUsuario &&  $ejecutarConsultaPassword){
      }  else {
 
 
-      echo "Usuario no encontrado";
+      header("Location:loginform.php?usuario=noencontrado");
 
      }
 
