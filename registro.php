@@ -27,6 +27,19 @@ $usuarionuevo->registro($postnombre,$postapellido,$postcorreo,$postusuario,$post
 
 ?>
 
+<div class="row welmsg">
+
+<div class="col-md-12">
+
+ <h3>Verifique sus datos.</h3>
+
+</div>
+
+ </div>
+
+
+
+
 <div class="row">
 <div class="col-md-4"></div>
 <div class="col-md-4" id="registrocfrm">

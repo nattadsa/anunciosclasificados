@@ -23,11 +23,16 @@ class Anuncios {
 
      public function mostrarDatosAnuncio(){
 
+        echo '<div class="row ">';
 
+        echo '<div class="col-md-12 adconfirm">';
+
+
+        
         echo "<b>Titulo:</b> " . $this->tituloAnuncio . "<br>";
         echo "<b>Anuncio:</b> " . $this ->textoAnuncio .  "<br>";
 
-        echo "<b><Autor:</b>" . $this ->autor . "<br>";
+        echo "<b>Autor: </b>" . $this ->autor . "<br>" ;
 
      }
 
@@ -72,11 +77,11 @@ return $conectar;
     
 
               $conexion = $this->conectarse();
-              $consulta = "SELECT * FROM anuncios ORDER BY anuncioid DESC limit 7";
+              $consulta = "SELECT * FROM anuncios ORDER BY anuncioid DESC limit 6";
               $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
               
 
-             echo '<div class="row">';
+            
 
               while ($resultado = $ejecutar_consulta->fetch_assoc()) {
                
@@ -84,16 +89,22 @@ return $conectar;
                 
                 echo '
 	
-	               <div class="col-lg-4 anuncios">
+                <div class="row">
+                 <div class="col-md-2"></div>
+	               <div class="col-md-8 anuncios">
 
-	                   <h3>' .$resultado["titulo"] . '</h3>
+	                   <h3 class="tituload">' .$resultado["titulo"] . '</h3><br>
 	      	
-	                   <p>' . $resultado["texto"]. '</p>
+	                   <p class="adtext">' . $resultado["texto"]. '</p>
 
-	                   <p><b>' . $resultado["autor"]. '</b></p>
+	                   <p class="autorad"><b>' . $resultado["autor"]. '</b></p>
 	      	
 
 	              </div>
+                <div class="col-md-2"></div>
+                </div>
+
+                
 
                   
 
@@ -103,7 +114,7 @@ return $conectar;
              
                }
 
-               echo '</div>';
+                
 
              
 
@@ -126,3 +137,5 @@ return $conectar;
 
 
 ?>
+
+<div class="col-md-2"></div>

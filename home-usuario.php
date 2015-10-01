@@ -10,9 +10,18 @@ include("confirmacionlog.php");
 
 session_start();
 
-echo "Bienvenido al sistema " . $_SESSION['loginuser']->nombre . " " . $_SESSION['loginuser']->apellido . "<br>";
 
 
+
+echo '<div class="row welmsg">';
+
+echo '<div class="col-md-12">';
+
+echo "<h3>Bienvenido al sistema " .", ".  $_SESSION['loginuser']->nombre . " " . $_SESSION['loginuser']->apellido . ".</h3>"  . "<br>";
+
+echo '</div>';
+
+echo '</div>';
 
 
 

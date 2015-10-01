@@ -5,6 +5,16 @@ error_reporting(E_ALL ^ E_NOTICE);
 
  ?>
 
+ <div class="row welmsg">
+
+<div class="col-md-12">
+
+ <h3>Ingrese sus credenciales</h3>
+
+</div>
+
+ </div>
+
 
 <div class="row" id="logform">
 

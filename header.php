@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
    
     <script src="js/jquery.js"></script>
      <script src="js/bootstrap.js"></script>
@@ -22,7 +24,7 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container" id="contenedor">
 
     <div class="row" id="header">
 

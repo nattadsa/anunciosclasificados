@@ -1,33 +1,20 @@
 <?php include("header.php");
 
 
-error_reporting(E_ALL ^ E_NOTICE);
 
-if($_GET["datos"]=="registrados"){
-
- echo "Ya existe un usuario con su correo o nombre de usuario registrado, intente nuevamente con otro correo o usuario.";
-
-
-}
-
-
-
-
-
-
-
-if($_GET["vd"]=="si") {
-
-
-	echo "Ingrese sus datos nuevamente";
-	
-
-
-	
-}
 
 
  ?>
+
+ <div class="row welmsg">
+
+<div class="col-md-12">
+
+ <h3>Ingrese sus datos para registrarse en el sistema.</h3>
+
+</div>
+
+ </div>
 
 
 
@@ -90,6 +77,35 @@ if($_GET["vd"]=="si") {
 </form>
 
 </div>
+
+<?php 
+
+error_reporting(E_ALL ^ E_NOTICE);
+
+if($_GET["datos"]=="registrados"){
+
+ echo "Ya existe un usuario con su correo o nombre de usuario registrado, intente nuevamente con otro correo o usuario.";
+
+
+}
+
+
+
+
+
+
+
+if($_GET["vd"]=="si") {
+
+
+	echo "Ingrese sus datos nuevamente";
+	
+
+
+	
+}
+
+?>
 
 
 

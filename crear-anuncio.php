@@ -12,18 +12,10 @@ include("adclass.php");
 session_start();
 
 
-$nuevoanuncio = new Anuncios();
 
 
-$autor = $_SESSION['loginuser']->nombre . " " . $_SESSION['loginuser']->apellido;
 
 
-if($_GET["anuncio"]=="revisar"){
-
-
-echo "Por favor revise los datos de su anuncio";
-
-}
 
 
 
@@ -34,13 +26,39 @@ echo "Por favor revise los datos de su anuncio";
 
 ?>
 
+<div class="row welmsg">
+
+<div class="col-md-12">
+
+ <h3>Cree su anuncio.</h3>
+
+</div>
+
+ </div>
+
+ <br><br>
+
+ <?php 
+
+
+ if($_GET["anuncio"]=="revisar"){
+
+
+echo "Por favor revise los datos de su anuncio";
+
+}
+
+ ?>
+
+
+
 <div class="row" id="anunciosformrow">
 
 <div class="col-md-4"></div>
 
 <div class="col-md-4" id="adform">
 
-<form name="anuncio_frm" id="anunciofrm" method="POST" enctype="application/x-www-form-urlencoded">
+<form name="anuncio_frm" id="anunciofrm" method="POST" action="anuncio-confirm.php" enctype="application/x-www-form-urlencoded">
 
 <table>
 
@@ -76,45 +94,7 @@ echo "Por favor revise los datos de su anuncio";
 
 <br>
 
-<?php
 
-if (isset($_POST["titulo_txt"])){
-
-$posttitulo = $_POST["titulo_txt"];
-$posttexto = $_POST["texto_txt"];
-
-
-
-$nuevoanuncio->crearDatosAnuncio($posttitulo,$posttexto,$autor);
-
-$_SESSION['anuncionew'] = $nuevoanuncio ;
-
-
-
-?>
-
-<div class="row" >
-<div class="col-md-4"></div>
-<div class="col-md-4" id="confirmacionad">
-<?php
-
-$nuevoanuncio->mostrarDatosAnuncio(); 
-
-echo "<br>¿Desea publicar estos datos?";
-
-echo '<form name="confirmacionanuncios_frm" id="confirmformanun" action="validacionanuncio.php"  method="GET" enctype="application/x-www-form-urlencoded">
-  
-<input type="submit" id="aceptarbtnan" name="aceptarbtnan" value="aceptar"/>
-
-<input type="submit" id="cancelarbtnan" name="cancelarbtnan" value="cancelar"/></form>';
-
-
-
-}
-?>
-</div>
-<div class="col-md-4"></div>
-</div>
 
 
 

@@ -1,7 +1,37 @@
+
+
+* {
+
+font-family: 'Montserrat', sans-serif;
+
+
+}
+
+body {
+
+background-color:#E6E6E6;
+
+
+}
+
+a {
+
+color:black;
+
+
+}
+
+a:hover {
+
+text-decoration:none;
+
+
+}
+
+
 #header {
 
 background-color: #FE9A2E;
-
 
 
 }
@@ -50,6 +80,7 @@ margin-top: 20px;
 #titulo {
 
 padding:25px;
+margin-top: 0px;
 
 
 }
@@ -70,8 +101,16 @@ padding: 25px;
 
 .anuncios {
 
+
+
+padding-right: 0px;
+padding-left: 0px;
 border-style: solid;
-height:250px;
+border-width: 1px;
+margin:20px 0px;
+word-break:break-all;
+
+
 
 
 
@@ -107,12 +146,21 @@ width: 100%;
 
 #footer {
 
-
+color:white;
 background-color: black;
 padding:25px;
 margin-top: 400px;
+text-align: center;
 
 }
+
+#footer a {
+
+color:blue;
+
+
+}
+
 
 #confirmacionad {
 
@@ -131,3 +179,64 @@ padding:25px;
 
 
 }
+
+.welmsg {
+
+background-color: #DF3A01;
+color:white;
+padding:25px;
+
+
+
+}
+
+.tituload {
+
+
+background-color: black;
+color:white;
+text-align: center;
+padding:5px;
+margin-top: 0px;
+
+
+}
+
+.autorad {
+
+background-color: #DF3A01;
+color:white;
+text-align: center;
+padding:5px;
+margin-top: 132px;
+margin-bottom: 0px;
+
+
+
+}
+
+#contenedor {
+
+border-style: solid;
+border-width: 1px;
+background-color: #FFFFFF;
+
+
+}
+
+.adtext {
+
+padding: 0px 15px;
+
+}
+
+.adconfirm {
+
+padding:25px;
+text-align: center;
+
+}
+
+
+
+
