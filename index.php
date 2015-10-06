@@ -18,7 +18,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 <div class="col-md-12">
 
- <h3>Bienvenido al sistema</h3>
+ <p>Bienvenido al sistema</p>
 
 </div>
 
@@ -48,7 +48,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 $consultaads = new Anuncios();
 
-echo "<h2>Ultimos anuncios publicados</h2>";
+echo "<h3>Ultimos anuncios publicados</h3>";
 
 
 

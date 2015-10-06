@@ -31,7 +31,17 @@ text-decoration:none;
 
 #header {
 
-background-color: #FE9A2E;
+background:  linear-gradient(to bottom, #FE9A2E 0, #DF7401 100%);
+background: -webkit-linear-gradient(to bottom, #FE9A2E 0, #DF7401 100%);
+background: -moz-linear-gradient(to bottom, #FE9A2E 0, #DF7401 100%);
+background: -ms-linear-gradient(to bottom, #FE9A2E 0, #DF7401 100%);
+background: -o-linear-gradient(to bottom, #FE9A2E 0, #DF7401 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FE9A2E), color-stop(100%,#DF7401)); /* Safari 4+, Chrome 2+ */  
+
+
+
+
+padding:15px;
 
 
 }
@@ -79,7 +89,7 @@ margin-top: 20px;
 
 #titulo {
 
-padding:25px;
+padding:10px;
 margin-top: 0px;
 
 
@@ -105,8 +115,16 @@ padding: 25px;
 
 padding-right: 0px;
 padding-left: 0px;
-border-style: solid;
-border-width: 1px;
+
+background: -ms-linear-gradient(to bottom, #D8D8D8 0, #848484 100%);
+background: -moz-linear-gradient(to bottom, #D8D8D8 0, #848484 100%);
+background: -o-linear-gradient(to bottom, #D8D8D8 0, #848484 100%);
+background: -webkit-linear-gradient(to bottom, #D8D8D8 0, #848484 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #D8D8D8), color-stop(100%,#848484)); /* Safari 4+, Chrome 2+ */  
+
+background: linear-gradient(to bottom, #D8D8D8 0, #848484 100%);
+
+
 margin:20px 0px;
 word-break:break-all;
 
@@ -182,9 +200,18 @@ padding:25px;
 
 .welmsg {
 
-background-color: #DF3A01;
+background: -ms-linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+background: -moz-linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+background: -o-linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+background: -webkit-linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff5b00), color-stop(100%,#db4b03)); /* Safari 4+, Chrome 2+ */  
+
+background: linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+
 color:white;
-padding:25px;
+padding:10px;
+text-shadow:#706d6d 1px 1px 1px;
+margin-top: -1px;
 
 
 
@@ -193,8 +220,18 @@ padding:25px;
 .tituload {
 
 
-background-color: black;
+background: -ms-linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+background: -moz-linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+background: -o-linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+background: -webkit-linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #353e4a), color-stop(100%, #1b1e26)); /* Safari 4+, Chrome 2+ */  
+
+background: linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+
+
+font-size: 1.3em;
 color:white;
+text-shadow:#706d6d 1px 1px 1px;
 text-align: center;
 padding:5px;
 margin-top: 0px;
@@ -204,9 +241,18 @@ margin-top: 0px;
 
 .autorad {
 
-background-color: #DF3A01;
+background: -ms-linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+background: -moz-linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+background: -o-linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+background: -webkit-linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff5b00), color-stop(100%, #db4b03)); /* Safari 4+, Chrome 2+ */  
+
+background: linear-gradient(to bottom, #ff5b00 0, #db4b03 100%);
+
 color:white;
 text-align: center;
+text-shadow:#706d6d 1px 1px 1px;
+
 padding:5px;
 margin-top: 132px;
 margin-bottom: 0px;
@@ -217,8 +263,7 @@ margin-bottom: 0px;
 
 #contenedor {
 
-border-style: solid;
-border-width: 1px;
+
 background-color: #FFFFFF;
 
 
@@ -227,6 +272,7 @@ background-color: #FFFFFF;
 .adtext {
 
 padding: 0px 15px;
+color: black;
 
 }
 
@@ -237,6 +283,73 @@ text-align: center;
 
 }
 
+.imgdelua {
 
+margin-top: 30px;
+padding:25px;
+
+
+}
+
+.aucontainer {
+
+text-align: center;
+
+}
+
+
+
+.editubtn{
+
+display: inline-block;
+
+
+}
+
+#imagenbanner {
+
+width:64px;
+height: 64px;
+
+}
+
+.validacionu {
+
+display: inline-block;
+
+}
+
+.validacionuok {
+
+display: inline-block;
+
+}
+
+.validacionc {
+
+display: inline-block;
+
+}
+
+.validacioncok {
+
+display: inline-block;
+
+}
+
+@media (max-width: 700px) {
+
+.anuncios {
+
+margin: -1px 0px;
+
+
+}
+
+
+
+
+
+}
 
 

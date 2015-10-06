@@ -30,7 +30,7 @@ session_start();
 
 <div class="col-md-12">
 
- <h3>Cree su anuncio.</h3>
+ <p>Cree su anuncio.</p>
 
 </div>
 

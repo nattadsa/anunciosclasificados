@@ -30,7 +30,8 @@
 
            <div class="col-md-2" >
         
-           <img src="img/shout.png" id="imagenbanner">
+            <img src="img/headerimg.png"/>
+
 
           </div> 
 
@@ -39,14 +40,14 @@
 
           <div class="col-md-6" >
       	
-      	    <h3 id="titulo">Anuncios Clasificados Ecuador</h3>
+      	    <h1 id="titulo">Anuncios Clasificados Ecuador</h1>
 
 
           </div> 
 
  <?php 
  
-        if($_SERVER['REQUEST_URI']=="/phpclases/" OR $_SERVER['REQUEST_URI']=="/phpclases/index.php" or $_SERVER['REQUEST_URI']=="/phpclases/index.php?mensaje=si"  ){
+        if($_SERVER['REQUEST_URI']=="/" OR $_SERVER['REQUEST_URI']=="/index.php" or $_SERVER['REQUEST_URI']=="/index.php?mensaje=si"  ){
 
          echo '
        
@@ -68,7 +69,7 @@
 
          ';
 
-        } else if($_SERVER['REQUEST_URI']=="/phpclases/crear-anuncio.php" or $_SERVER['REQUEST_URI']=="/phpclases/crear-anuncio.php?anuncio=revisar"  ){
+        } else if($_SERVER['REQUEST_URI']=="/crear-anuncio.php" or $_SERVER['REQUEST_URI']=="/crear-anuncio.php?anuncio=revisar"  ){
 
          echo '
        
@@ -93,7 +94,7 @@
 
         }
 
-        else if($_SERVER['REQUEST_URI']=="/phpclases/home-usuario.php" or $_SERVER['REQUEST_URI']=="/phpclases/home-usuario.php?anuncio=publicado"   ){
+        else if($_SERVER['REQUEST_URI']=="/home-usuario.php" or $_SERVER['REQUEST_URI']=="/home-usuario.php?anuncio=publicado"   ){
 
          echo '
        
@@ -121,7 +122,7 @@
 
 
 
-         else if($_SERVER['REQUEST_URI']=="/phpclases/loginform.php" OR $_SERVER['REQUEST_URI']=="/phpclases/registro.php" OR $_SERVER['REQUEST_URI']=="/phpclases/loginform.php?usuario=noencontrado" OR $_SERVER['REQUEST_URI']=="/phpclases/registroform.php" or $_SERVER['REQUEST_URI']=="/phpclases/registroform.php?vd=si" or $_SERVER['REQUEST_URI']=="/phpclases/registroform.php?datos=registrados" ){
+         else if($_SERVER['REQUEST_URI']=="/loginform.php" OR $_SERVER['REQUEST_URI']=="/registro.php" OR $_SERVER['REQUEST_URI']=="/loginform.php?usuario=noencontrado" OR $_SERVER['REQUEST_URI']=="/registroform.php" or $_SERVER['REQUEST_URI']=="/registroform.php?vd=si" or $_SERVER['REQUEST_URI']=="/registroform.php?datos=registrados" ){
 
          echo '
        
@@ -149,11 +150,7 @@
 
 
  ?>         
-
-
 	
 
 
      </div>
-
-     

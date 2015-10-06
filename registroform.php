@@ -10,7 +10,7 @@
 
 <div class="col-md-12">
 
- <h3>Ingrese sus datos para registrarse en el sistema.</h3>
+ <p>Ingrese sus datos para registrarse en el sistema.</p>
 
 </div>
 
@@ -36,29 +36,29 @@
 
 <tr>
 <th><label for="nombre">Nombre: </label></th>
-<td><input type="text" id="nombre" name="nombre_txt"/></td>
+<td><input type="name" id="nombre" name="nombre_txt"/ required></td>
 </tr>
 
 
 <tr>
 <th><label for="apellido">Apellido: </label></th>
-<td><input type="text" id="apellido" name="apellido_txt"/></td>
+<td><input type="name" id="apellido" name="apellido_txt" required/></td>
 </tr>
 
 
 <tr>
 <th><label for="correoe">Correo electrónico: </label></th>
-<td><input type="text" id="correoe" name="correoe_txt"/> </td>
+<td><input type="email" id="correoe" name="correoe_txt" required/> </td>
 </tr>
 
 <tr>
 <th><label for="usuario">Usuario: </label></th>
-<td><input type="text" id="usuario" name="usuario_txt"/></td>
+<td><input type="name" id="usuario" name="usuario_txt" required/></td>
 </tr>
 
 <tr>
 <th><label for="pass">Password: </label></th>
-<td><input type="password" id="pass" name="pass_txt"/></td>
+<td><input type="password" id="pass" name="pass_txt"required/></td>
 </tr>
 
 <tr>

@@ -23,21 +23,15 @@ class Usuario {
 
 //metodos
 
-           public function getcorreo(){
- 
-            return $this->correo;          
-
-           }
-
 
 public function conectarse()
 
 {
 
 $servidor = "localhost";
-$usuario = "root";
-$password = "";
-$bd="phpclases";
+$usuario = "veneijbo_ctr";
+$password = "-Soraj03";
+$bd="veneijbo_ace";
 $conectar = new mysqli($servidor,$usuario,$password,$bd) or die ("No se pudo conectar al servidor de BD Mysql");
 
 return $conectar;
@@ -60,28 +54,8 @@ return $conectar;
 
  public function mostrardatos(){
 
-         echo '
+          echo "<b>Nombre: </b>" . $this->nombre . "<br>" . "<b>Apellido:</b>" . $this->apellido . "<br>" . "<b>Correo electrónico:</b> " . $this->correo . "<br>" . "<b>Nombre de Usuario: </b>". $this->usuario ; 
 
-
-         <div class="row" id="mdrow">
-
-
-            <div class="col-md-3" ></div> 
-            <div class="col-md-6" id="mdusuariocol"><div id="editstatus"></div>Nombre:<span class="dusuario" id="mdnombre">'.$this->nombre.'</span><span id="nomdbstatus"></span><br>Apellido: <span class="dusuario" id="mdapellido">'.$this->apellido.'</span><span id="apdbstatus"></span><br>Nombre de usuario: <span class="dusuario" id="mdusuario">'.$this->usuario.'</span><span id="usdbstatus"></span><br>Correo Electrónico: <span class="dusuario" id="mdcorreo">'.$this->correo.'</span><span id="codbstatus"></span> <br>
-
-              <input type="submit" id="duedit" class="editubtn" name="duedit" value="Editar datos"><div class="editubtn" id="dusave"></div>
-
-               </div>
-
-            <div class="col-md-3"></div> 
-            
-
-
-  
-           
-
-
-         </div> ';
 
  }
 
@@ -227,59 +201,6 @@ public function obtenerDatos($usuario){
   $datos=$ejecutarConsultaUsuario->fetch_assoc();
   
   return $datos;
-
-
-}
-
-public function buscarUsuario($usuario){
-
-  $conexion = $this->conectarse();
-  $consultaUsuario = "SELECT * FROM phpclases_table WHERE usuario='$usuario'";
-  $ejecutarConsultaUsuario = $conexion->query(utf8_encode($consultaUsuario));
-
-  if($ejecutarConsultaUsuario->num_rows ==1){
-
-   return true;
-
-
-  }
-
-  else {
-
-  return false;
-
-
-  }
-
-
-
-
-
-}
-
-public function buscarCorreo($correo){
-
-  $conexion = $this->conectarse();
-  $consultaCorreo = "SELECT * FROM phpclases_table WHERE email='$correo'";
-  $ejecutarConsultaCorreo = $conexion->query(utf8_encode($consultaCorreo));
-
-  if($ejecutarConsultaCorreo->num_rows ==1){
-
-   return true;
-
-
-  }
-
-  else {
-
-  return false;
-
-
-
-  }
-
-  
-
 
 
 }

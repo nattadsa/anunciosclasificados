@@ -9,7 +9,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 <div class="col-md-12">
 
- <h3>Ingrese sus credenciales</h3>
+ <p>Ingrese sus credenciales</p>
 
 </div>
 

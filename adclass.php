@@ -93,7 +93,7 @@ return $conectar;
                  <div class="col-md-2"></div>
 	               <div class="col-md-8 anuncios">
 
-	                   <h3 class="tituload">' .$resultado["titulo"] . '</h3><br>
+	                   <p class="tituload"><b>' .$resultado["titulo"] . '</b></p><br>
 	      	
 	                   <p class="adtext">' . $resultado["texto"]. '</p>
 
@@ -124,6 +124,189 @@ return $conectar;
 
      }
 
+     public function mostrarAnunciosUsuario($usuario){
+
+
+          $conexion = $this->conectarse();
+          $consulta = "SELECT * FROM anuncios WHERE autor='$usuario'";
+          $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
+
+
+             $i= 0;
+             $anuncioid =[];
+
+          while ($resultado = $ejecutar_consulta->fetch_assoc()) {
+               
+                 $i++;
+
+                 $anuncioid[] = $resultado["anuncioid"];
+                
+                echo '
+    
+                <div class="row">
+                 <div class="col-md-1"></div>
+                   <div class="col-md-7 anuncios">
+
+                       <h3 class="tituload userads" id="'. "ta" . ($i-1) .'">' .$resultado["titulo"] . '</h3><br>
+            
+                       <p class="adtext userads" id="'. "tt" . ($i-1) .'">' . $resultado["texto"]. '</p>
+
+                       <p class="autorad userads" id="'. "aa" . ($i-1) .'"><b>' . $resultado["autor"]. '</b></p>
+            
+
+                  </div>
+                <div class="col-md-4 aucontainer"><a href="borrarad-cfrm.php?andel='. ($i-1 ).'"><img class="imgdelua" src="img/delete.png"></a><p>Eliminar anuncio</p><img src="img/edit.png" class="editad" id="edit'. ($i-1 ).'" style="cursor:pointer"><p>Editar anuncio</p></div>
+                </div>
+
+                
+
+                  
+
+
+
+              ';
+
+             
+               }
+
+               return  $anuncioid;
+           
+
+
+     }
+
+         public function mostrarAnunciosideliminar($anuncioid){
+
+
+          $conexion = $this->conectarse();
+          $consulta = "SELECT * FROM anuncios WHERE anuncioid='$anuncioid'";
+          $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
+          $resultado = $ejecutar_consulta->fetch_assoc();
+               
+                 
+
+                 
+                
+                echo '
+    
+                 
+
+                <div class="row">
+                 <div class="col-md-1"></div>
+                   <div class="col-md-7 anuncios">
+
+                       <h3 class="tituload">' .$resultado["titulo"] . '</h3><br>
+            
+                       <p class="adtext">' . $resultado["texto"]. '</p>
+
+                       <p class="autorad"><b>' . $resultado["autor"]. '</b></p>
+            
+
+                  </div>
+                <div class="col-md-4 aucontainer"><a href="borrarad-cfrm.php?andel=si"><img class="imgdelua" src="img/delete.png"></a><p>Eliminar anuncio</p><img src="img/edit.png"><p>Editar anuncio</p></div>
+                </div>
+
+                <div class="row">
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-6">
+
+            <p>¿Está seguro que desea eliminar este anuncio?</p>
+
+            <form name="borrarad_cfrm" method="get" enctype="application/x-www-form-urlencoded">
+
+                <input type="submit" name="acptrdelad" id="acptrdelad" value="aceptar">
+
+                <input type="submit" name="canceldelad" id="canceldelad" value="cancelar">
+
+                
+
+
+
+            </form>
+
+    </div>
+
+    <div class="col-md-2"></div>
+
+</div>
+
+
+                  
+
+
+
+              ';
+
+             
+               }
+
+
+
+       public function borrarAnuncioUsuario($anuncioid){
+
+          
+          $conexion = $this->conectarse();
+          $consulta = "DELETE FROM anuncios WHERE anuncioid='$anuncioid'";
+          $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
+
+
+          header("Location:mis-anuncios.php?anuncio=eliminado");
+
+
+
+
+
+
+
+
+
+       }
+
+        public function editarTituloAnuncioUsuario($anuncioid,$titulo){
+
+          
+          $conexion = $this->conectarse();
+          $conexion->query("SET NAMES 'utf8'");
+          $consulta = "UPDATE anuncios SET titulo='$titulo' WHERE anuncioid='$anuncioid'";
+          $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
+
+
+          
+
+
+
+
+
+
+
+
+
+       }
+
+       public function editarTextoAnuncioUsuario($anuncioid,$texto){
+
+          
+          $conexion = $this->conectarse();
+          $conexion->query("SET NAMES 'utf8'");
+          $consulta = "UPDATE anuncios SET texto='$texto' WHERE anuncioid='$anuncioid'";
+          $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
+
+
+          
+
+
+
+
+
+
+
+
+
+       }
+
+
 
 }
 
@@ -138,4 +321,3 @@ return $conectar;
 
 ?>
 
-<div class="col-md-2"></div>
