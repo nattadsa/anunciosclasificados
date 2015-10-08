@@ -14,6 +14,7 @@ $nuevoanuncio = new Anuncios();
 
 
 $autor = $_SESSION['loginuser']->nombre . " " . $_SESSION['loginuser']->apellido;
+$autormail = $_SESSION['loginuser']->getcorreo();
 
 
 
@@ -23,7 +24,7 @@ $posttexto = $_POST["texto_txt"];
 
 
 
-$nuevoanuncio->crearDatosAnuncio($posttitulo,$posttexto,$autor);
+$nuevoanuncio->crearDatosAnuncio($posttitulo,$posttexto,$autor,$autormail);
 
 $_SESSION['anuncionew'] = $nuevoanuncio;
 
@@ -38,7 +39,7 @@ $_SESSION['anuncionew'] = $nuevoanuncio;
 
 <div class="col-md-12">
 
- <h3>Verifique los datos de su publicacion.</h3>
+ <p>Verifique los datos de su publicacion.</p>
 
 </div>
 
@@ -48,6 +49,7 @@ $_SESSION['anuncionew'] = $nuevoanuncio;
 <?php
 
 $nuevoanuncio->mostrarDatosAnuncio(); 
+
 
 
 

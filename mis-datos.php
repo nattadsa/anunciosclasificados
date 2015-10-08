@@ -57,7 +57,7 @@ $usuarioactual  = $_SESSION['loginuser'];
 
 
 
-$usuarioactual->mostrardatos();
+$usuarioactual->mostrardatosEdit();
 
 $_SESSION["useruactual"] = $usuarioactual->usuario; 
 
@@ -74,6 +74,7 @@ $(document).ready(function(){
 
 
 var editstatus=false;
+var ajaxUserResponse="true";
 
    
 
@@ -82,16 +83,17 @@ var editstatus=false;
  
 $("#duedit").click(function(){
 
+	           $("#editstatus").html("");
+
+
 
 $("#nomdbstatus").html('<img src="img/ok.png"/>');
     $("#usdbstatus").html('<img src="img/ok.png"/>');
     $("#apdbstatus").html('<img src="img/ok.png"/>');
-    $("#codbstatus").html('<img src="img/ok.png"/>');
 
     $("#nomdbstatus").show();
     $("#usdbstatus").show();
     $("#apdbstatus").show();
-    $("#codbstatus").show();
 
 if (editstatus===false){
 
@@ -115,8 +117,6 @@ $("#txtap").val(valorApellidoO);
 $("#mdusuario").html('<input type="text" id="txtus" name="txtus_txt" required>');
 $("#txtus").val(valorUsuarioO);
 
-$("#mdcorreo").html('<input type="text" id="txtmail" name="txtmail_txt" required>');
-$("#txtmail").val(valorCorreoO);
 
 $("#dusave").html('<button id="dusavebtn">Guardar cambios</button>');
 
@@ -134,6 +134,12 @@ var txnomValue= $("#txtnom").val();
         data: {nuevoNombre: txnomValue },
         success: function(data){
         $("#nomdbstatus").html(data);
+       
+                   
+
+
+
+
         }
         });
 
@@ -166,37 +172,19 @@ $("#txtus").on("input", function(){
       $.ajax({
         url: "user-data-edit.php",
         type: "POST",
+        dataType: "json",
         data: {nuevoUsuario: txtusValue },
         success: function(data){
-        $("#usdbstatus").html(data);
-        }
-        });
-
-
-});
-
-
-$("#txtmail").on("input", function(){
-
-  var txtMailValue= $("#txtmail").val();
-
-      $.ajax({
-        url: "user-data-edit.php",
-        type: "POST",
-        data: {nuevoCorreo: txtMailValue },
-        success: function(data){
-
-         
-
-        $("#codbstatus").html(data);
-        
-
+        $("#usdbstatus").html(data.imagen);
+    
+        ajaxUserResponse= data.stat;
 
         }
         });
 
 
 });
+
 
 
 
@@ -213,7 +201,8 @@ $("#txtmail").on("input", function(){
 $("#dusavebtn").click(function(){
 
 
-    
+	if(ajaxUserResponse=="true"){
+
 
     
 	$("#dusavebtn").hide();
@@ -227,6 +216,33 @@ $("#dusavebtn").click(function(){
     $("#mdusuario").html($("#txtus").val());
     $("#mdcorreo").html($("#txtmail").val());
 
+    var nuevoEditNombre= $("#mdnombre").html();
+    var nuevoEditApellido= $("#mdapellido").html();
+    var nuevoEditUsuario= $("#mdusuario").html();
+    var nuevoEditCorreo= $("#mdcorreo").html();
+
+
+    $.ajax({
+
+       url:"save-edit.php",
+       type:"POST",
+       data: {newEditname:nuevoEditNombre,newEditLast:nuevoEditApellido,newEditUser:nuevoEditUsuario,newEditMail:nuevoEditCorreo},
+
+       success: function(data){
+
+       $("#editstatus").html(data);       
+
+
+       }
+
+
+
+
+    });
+
+
+
+
 
 
      
@@ -237,7 +253,12 @@ $("#dusavebtn").click(function(){
 
 
 
+} else {
 
+
+alert("Ingrese un nombre de usuario válido");
+
+}
 
 
 

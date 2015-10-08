@@ -68,15 +68,17 @@
 
          ';
 
-        } else if($_SERVER['REQUEST_URI']=="/phpclases/crear-anuncio.php" or $_SERVER['REQUEST_URI']=="/phpclases/crear-anuncio.php?anuncio=revisar"  ){
+        } else if($_SERVER['REQUEST_URI']=="/phpclases/crear-anuncio.php" or $_SERVER['REQUEST_URI']=="/phpclases/crear-anuncio.php?anuncio=revisar" or $_SERVER['REQUEST_URI']=="/phpclases/mis-datos.php" or $_SERVER['REQUEST_URI']=="/phpclases/mis-anuncios.php" or $_SERVER['REQUEST_URI']=="/phpclases/borrarad-cfrm.php?andel=0"  ){
 
          echo '
        
           <div class="col-md-4" id="rightsalirpanel" >
+
+            <button class="botones"><a href="home-usuario.php">Página principal</a></button>
       	
       	    <button class="botones"><a href="salir.php">Salir del sistema</a></button>
 
-            <button class="botones"><a href="home-usuario.php">Atrás</a></button>
+            
 
             
 

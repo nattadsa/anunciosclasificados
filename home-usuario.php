@@ -39,7 +39,7 @@ echo '</div>';
       <ul class="nav navbar-nav">
         <li class="active"><a href="crear-anuncio.php">Crear Anuncio<span class="sr-only">(current)</span></a></li>
         <li><a href="mis-anuncios.php">Mis anuncios</a></li>
-        <li><a href="mis-datos">Datos personales</a></li>
+        <li><a href="mis-datos.php">Datos personales</a></li>
 
 
         

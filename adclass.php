@@ -5,12 +5,14 @@ class Anuncios {
      public $tituloAnuncio;
      public $textoAnuncio;
      public $autor;
+     public $autormail;
 
 
 
 
 
-     public function crearDatosAnuncio($title,$ad,$adautor){
+
+     public function crearDatosAnuncio($title,$ad,$adautor,$adautormail){
 
 
         $this->tituloAnuncio = $title;
@@ -18,6 +20,9 @@ class Anuncios {
         $this ->textoAnuncio = $ad;
 
         $this ->autor =$adautor;
+
+        $this ->autormail =$adautormail;
+
 
      }
 
@@ -33,6 +38,9 @@ class Anuncios {
         echo "<b>Anuncio:</b> " . $this ->textoAnuncio .  "<br>";
 
         echo "<b>Autor: </b>" . $this ->autor . "<br>" ;
+
+        echo "<b>Correo Electrónico: </b>" . $this ->autormail . "<br>" ;
+
 
      }
 
@@ -55,7 +63,7 @@ return $conectar;
 
      $conexion = $this->conectarse();
      $conexion->query("SET NAMES 'utf8'");
-     $consulta = "INSERT INTO anuncios(titulo,texto,autor) VALUES ('$this->tituloAnuncio','$this->textoAnuncio','$this->autor')";
+     $consulta = "INSERT INTO anuncios(titulo,texto,autor,autormail) VALUES ('$this->tituloAnuncio','$this->textoAnuncio','$this->autor','$this->autormail')";
      $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
 
      if ($ejecutar_consulta){
@@ -97,7 +105,10 @@ return $conectar;
 	      	
 	                   <p class="adtext">' . $resultado["texto"]. '</p>
 
-	                   <p class="autorad"><b>' . $resultado["autor"]. '</b></p>
+	                   <p class="autorad"><b>Autor: </b>' . $resultado["autor"].'<br><b>Contacto: </b>'.$resultado["autormail"].'</p>
+
+                    
+
 	      	
 
 	              </div>
@@ -124,11 +135,11 @@ return $conectar;
 
      }
 
-     public function mostrarAnunciosUsuario($usuario){
+     public function mostrarAnunciosUsuario($autormail){
 
 
           $conexion = $this->conectarse();
-          $consulta = "SELECT * FROM anuncios WHERE autor='$usuario'";
+          $consulta = "SELECT * FROM anuncios WHERE autormail='$autormail'";
           $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
 
 
@@ -151,7 +162,9 @@ return $conectar;
             
                        <p class="adtext userads" id="'. "tt" . ($i-1) .'">' . $resultado["texto"]. '</p>
 
-                       <p class="autorad userads" id="'. "aa" . ($i-1) .'"><b>' . $resultado["autor"]. '</b></p>
+                       <p class="autorad userads" id="'. "aa" . ($i-1) .'"><b>Autor: </b>' . $resultado["autor"].'<br><b>Contacto: </b>'. $resultado["autormail"].'</p>
+
+                     
             
 
                   </div>
@@ -200,6 +213,9 @@ return $conectar;
                        <p class="adtext">' . $resultado["texto"]. '</p>
 
                        <p class="autorad"><b>' . $resultado["autor"]. '</b></p>
+
+                      <p class="autorad"><b>' . $resultado["autormail"]. '</b></p>
+
             
 
                   </div>

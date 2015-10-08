@@ -21,9 +21,9 @@
 
 <div class="row" id="regform">
 
-<div class="col-md-4"></div>
+<div class="col-md-2"></div>
 
-<div class="col-md-4">
+<div class="col-md-6">
 
 
 <form  name="formulario_txt" method="POST" action="registro.php" enctype="application/x-www-form-urlencoded">
@@ -48,12 +48,12 @@
 
 <tr>
 <th><label for="correoe">Correo electrónico: </label></th>
-<td><input type="email" id="correoe" name="correoe_txt" required/> </td>
+<td><input class="validarc" type="email" id="correoe" name="correoe_txt" required/><div id="regcorreoestatus" class="validarc"></div> </td>
 </tr>
 
 <tr>
 <th><label for="usuario">Usuario: </label></th>
-<td><input type="name" id="usuario" name="usuario_txt" required/></td>
+<td><input class="validar" type="name" id="usuario" name="usuario_txt" required/><div id="reguserstatus" class="validar"></div></td>
 </tr>
 
 <tr>
@@ -72,7 +72,7 @@
 </div>
 
 
-<div class="col-md-4"></div>
+<div class="col-md-2"></div>
 
 </form>
 
@@ -117,7 +117,63 @@ if($_GET["vd"]=="si") {
 
 
 
+<script type="text/javascript">
+	
+$("#usuario").on("input", function(){
 
+var txuserValue= $("#usuario").val();
+
+
+         
+
+        $.ajax({
+        url: "user-data-edit.php",
+        type: "POST",
+        data: {regUsuario: txuserValue },
+        success: function(data){
+        $("#reguserstatus").html(data);
+       
+                   
+
+
+
+
+        }
+        });
+
+
+});
+
+$("#correoe").on("input", function(){
+
+var txcorreoeValue= $("#correoe").val();
+
+
+         
+
+        $.ajax({
+        url: "user-data-edit.php",
+        type: "POST",
+        data: {regCorreoe: txcorreoeValue },
+        success: function(data){
+        $("#regcorreoestatus").html(data);
+       
+                   
+
+
+
+
+        }
+        });
+
+
+});
+
+
+
+
+
+</script>
 
 
 

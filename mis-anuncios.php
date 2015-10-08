@@ -64,7 +64,7 @@ $anunciosDeUsuario = new Anuncios();
 if(isset($_GET["anuncio"])){
 
 
-Echo "Se ha eliminado el anuncio exitosamente.";
+Echo '<p id="deletestatus">Se ha eliminado el anuncio exitosamente.</p>';
 
 
 }
@@ -73,12 +73,12 @@ Echo "Se ha eliminado el anuncio exitosamente.";
 
 
 
-$autorusuarioactual = $usuarioactual->nombre . " " . $usuarioactual->apellido;
+$mailusuarioactual = $usuarioactual->getcorreo();
 
 
 
 
-$arrayaid=$anunciosDeUsuario->mostrarAnunciosUsuario($autorusuarioactual);
+$arrayaid=$anunciosDeUsuario->mostrarAnunciosUsuario($mailusuarioactual);
 
 
 
@@ -105,7 +105,7 @@ $jsarray = $_SESSION["arrayid"];
 
    $(".editad").click(function(){
 
-    
+    $("#deletestatus").hide();
 
     if(edicion===false && ediciontxt===false ){
 
