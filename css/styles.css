@@ -193,6 +193,7 @@ text-align: justify;
 #registrocfrm {
 
 padding:25px;
+text-align: justify;
 
 
 
@@ -348,6 +349,14 @@ display: inline-block;
 display: inline-block;
 
 }
+
+#betatag {
+
+color: red;
+
+}
+
+
 
 
 

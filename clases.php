@@ -90,16 +90,12 @@ public function mostrardatos(){
          echo '
 
 
-         <div class="row" id="mdrow">
 
 
-            <div class="col-md-3" ></div> 
-            <div class="col-md-6" id="mdusuariocol"><div id="editstatus"></div>Nombre:<span class="dusuario" id="mdnombre">'.$this->nombre.'</span><span id="nomdbstatus"></span><br>Apellido: <span class="dusuario" id="mdapellido">'.$this->apellido.'</span><span id="apdbstatus"></span><br>Nombre de usuario: <span class="dusuario" id="mdusuario">'.$this->usuario.'</span><span id="usdbstatus"></span><br>Correo Electrónico: <span class="dusuario" id="mdcorreo">'.$this->correo.'</span><span id="codbstatus"></span> <br>
+            <div id="mdusuariocol"><div id="editstatus"></div>Nombre:<span class="dusuario" id="mdnombre">'.$this->nombre.'</span><span id="nomdbstatus"></span><br>Apellido: <span class="dusuario" id="mdapellido">'.$this->apellido.'</span><span id="apdbstatus"></span><br>Nombre de usuario: <span class="dusuario" id="mdusuario">'.$this->usuario.'</span><span id="usdbstatus"></span><br>Correo Electrónico: <span class="dusuario" id="mdcorreo">'.$this->correo.'</span><span id="codbstatus"></span> <br>
 
 
-               </div>
 
-            <div class="col-md-3"></div> 
             
 
 
@@ -107,7 +103,7 @@ public function mostrardatos(){
            
 
 
-         </div> ';
+          ';
 
  }
 
@@ -330,9 +326,15 @@ public function actualizarDatos($nombre,$apellido,$usuario,$correo){
       $consultaNombre = "UPDATE phpclases_table SET nombre='$nombre' WHERE email='$this->correo'";
      $ejecutarConsultaNombre = $conexion->query(utf8_encode($consultaNombre));
 
+       if($ejecutarConsultaNombre){   
+
+        echo '<p>Nombre actualizado</p>';
+
+      }
 
 
-     }
+     } 
+
 
      if($apellido!=$this->apellido){
 
@@ -341,9 +343,15 @@ public function actualizarDatos($nombre,$apellido,$usuario,$correo){
       $consultaApellido = "UPDATE phpclases_table SET apellido='$apellido' WHERE email='$this->correo'";
      $ejecutarConsultaApellido = $conexion->query(utf8_encode($consultaApellido));
 
+          
+       if($ejecutarConsultaApellido){
+       
+          echo '<p>Apellido actualizado</p>';
 
-      
      }
+      
+     } 
+
 
      if($usuario!=$this->usuario && $this->buscarUsuario($usuario)==false){
     
@@ -351,15 +359,15 @@ public function actualizarDatos($nombre,$apellido,$usuario,$correo){
       $consultaUsuario = "UPDATE phpclases_table SET usuario='$usuario' WHERE email='$this->correo'";
      $ejecutarConsultaUsuario = $conexion->query(utf8_encode($consultaUsuario));
 
-     echo '<p>Sus datos se han actualizado. Recuerde logearse con sus nuevas credenciales en su próximo ingreso al sistema.</p>';
+     if( $ejecutarConsultaUsuario){
+   
+     echo '<p>Usuario actualizado</p>';
+
+   }
       
      }
 
-     else {
-
-     echo '<p id="editerror">No se han podido actualizar sus datos, su nombre de usuario ya está siendo usado o sus datos ya están actualizados.</p>';
-
-     }
+    
 
      
 

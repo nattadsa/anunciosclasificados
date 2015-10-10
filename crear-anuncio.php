@@ -26,16 +26,8 @@ session_start();
 
 ?>
 
-<div class="row welmsg">
 
-<div class="col-md-12">
-
- <p>Cree su anuncio.</p>
-
-</div>
-
- </div>
-
+ 
  <br><br>
 
  <?php 

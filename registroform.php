@@ -6,16 +6,7 @@
 
  ?>
 
- <div class="row welmsg">
-
-<div class="col-md-12">
-
- <p>Ingrese sus datos para registrarse en el sistema.</p>
-
-</div>
-
- </div>
-
+ 
 
 
 

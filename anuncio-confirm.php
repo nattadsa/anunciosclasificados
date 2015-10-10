@@ -35,15 +35,7 @@ $_SESSION['anuncionew'] = $nuevoanuncio;
 ?>
 
 
-<div class="row welmsg">
 
-<div class="col-md-12">
-
- <p>Verifique los datos de su publicacion.</p>
-
-</div>
-
- </div>
 
 
 <?php

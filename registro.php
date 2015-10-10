@@ -27,22 +27,14 @@ $usuarionuevo->registro($postnombre,$postapellido,$postcorreo,$postusuario,$post
 
 ?>
 
-<div class="row welmsg">
 
-<div class="col-md-12">
-
- <h3>Verifique sus datos.</h3>
-
-</div>
-
- </div>
 
 
 
 
 <div class="row">
-<div class="col-md-4"></div>
-<div class="col-md-4" id="registrocfrm">
+<div class="col-md-2"></div>
+<div class="col-md-8" id="registrocfrm">
 
 <?php $usuarionuevo->mostrardatos();
 
@@ -67,7 +59,7 @@ $_SESSION['usuarionuevo']  = $usuarionuevo;
 
 </form>
 </div>
-<div class="col-md-4"></div>
+<div class="col-md-2"></div>
 
 </div>
 

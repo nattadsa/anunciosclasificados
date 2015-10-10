@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Anuncios clasificados Ecuador</title>
+	<title>Anuncios clasificados Ecuador Beta</title>
 	<meta charset="UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

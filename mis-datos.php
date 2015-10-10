@@ -1,6 +1,5 @@
 <?php
 
-include("header.php");
 
 include("clases.php");
 
@@ -10,48 +9,14 @@ include("confirmacionlog.php");
 
 session_start();
 
+include("header.php");
+
+
 $usuarioactual  = $_SESSION['loginuser'];
 
 
 
-?>
 
-<div class="row welmsg">
-
-<div class="col-md-12">
-
- <p>Sus datos</p>
-
-</div>
-
- </div>
-
- <nav class="navbar navbar-default">
-  <div class="container">
-           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="crear-anuncio.php">Crear Anuncio<span class="sr-only">(current)</span></a></li>
-        <li><a href="mis-anuncios.php">Mis anuncios</a></li>
-        <li><a href="mis-datos.php">Datos personales</a></li>
-
-
-        
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Búsqueda de anuncios">
-        </div>
-        <button type="submit" class="btn btn-default">Enviar</button>
-      </form>
-      
-   
-  </div>
-</nav>
-
-
-
-
-<?php
 
 
 

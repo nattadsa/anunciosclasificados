@@ -14,17 +14,6 @@ error_reporting(E_ALL ^ E_NOTICE);
  ?>
 
 
-<div class="row welmsg">
-
-<div class="col-md-12">
-
- <p>Bienvenido al sistema</p>
-
-</div>
-
- </div>
-
- <br><br>
 
 
 

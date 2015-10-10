@@ -212,9 +212,8 @@ return $conectar;
             
                        <p class="adtext">' . $resultado["texto"]. '</p>
 
-                       <p class="autorad"><b>' . $resultado["autor"]. '</b></p>
+                       <p class="autorad"><b><b>Autor: </b>' . $resultado["autor"]. '<br><b>Contacto: </b>'. $resultado["autormail"].'</b></p>
 
-                      <p class="autorad"><b>' . $resultado["autormail"]. '</b></p>
 
             
 
