@@ -66,8 +66,24 @@ echo "Por favor revise los datos de su anuncio";
 <th><label for="texto">Anuncio: </label></th><td><textarea name="texto_txt" id="texto"  style="height:200px"></textarea>	</td>
 
 </tr>
- 
+
+
 <tr>
+
+<th></th><td><img id="captcha" src="securimage/securimage_show.php" alt="CAPTCHA Image" /></td>
+
+</tr>
+
+
+
+<tr>
+<th>Introduzca los caracteres mostrados en la imagen</th><td><input type="text" name="captcha_code" size="10" maxlength="6" style="width:100%" /><a href="#" onclick="document.getElementById('captcha').src = 'securimage/securimage_show.php' + Math.random(); return false"></a></td>
+</tr>
+
+
+
+
+ <tr>
 
 <th></th><td id="adsendbutton"><input type="submit" id="enviar-anuncio" name="enviar-anuncio-btn" value="enviar"/></td>
 	

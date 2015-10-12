@@ -188,6 +188,72 @@ return $conectar;
 
      }
 
+
+      public function buscarAnuncios($keyword){
+
+
+          $conexion = $this->conectarse();
+          $consulta = "SELECT * FROM anuncios WHERE MATCH (titulo,texto) AGAINST ('$keyword')";
+
+          $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
+
+
+             $i= 0;
+             $anuncioid =[];
+
+
+          if ($ejecutar_consulta->num_rows == 0){
+
+             echo '<p style="text-align:center">No se han encontrado anuncios que coincidan con la palabra introcucida</p>';
+          }    
+
+             
+
+          while ($resultado = $ejecutar_consulta->fetch_assoc()) {
+               
+                 $i++;
+
+                 $anuncioid[] = $resultado["anuncioid"];
+                
+                echo '
+    
+                <div class="row">
+                 <div class="col-md-2"></div>
+                   <div class="col-md-8 anuncios_found">
+
+                       <h3 class="tituload userads" id="'. "ta" . ($i-1) .'">' .$resultado["titulo"] . '</h3><br>
+            
+                       <p class="adtext userads" id="'. "tt" . ($i-1) .'">' . $resultado["texto"]. '</p>
+
+                       <p class="autorad_found userads" id="'. "aa" . ($i-1) .'"><b>Autor: </b>' . $resultado["autor"].'<br><b>Contacto: </b>'. $resultado["autormail"].'</p>
+
+                     
+            
+
+                  </div>
+                 <div class="col-md-2"></div>
+
+                
+                </div>
+
+                
+
+                  
+
+
+
+              ';
+
+             
+               }
+
+               return  $anuncioid;
+           
+
+
+     }
+
+
          public function mostrarAnunciosideliminar($anuncioid){
 
 

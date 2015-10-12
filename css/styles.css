@@ -135,6 +135,34 @@ word-break:break-all;
 }
 
 
+.anuncios_found {
+
+
+
+padding-right: 0px;
+padding-left: 0px;
+
+background: -ms-linear-gradient(to bottom, #FAAC58 0, #FF4000 100%);
+background: -moz-linear-gradient(to bottom, #FAAC58 0, #FF4000 100%);
+background: -o-linear-gradient(to bottom, #FAAC58 0, #FF4000 100%);
+background: -webkit-linear-gradient(to bottom, #FAAC58 0, #FF4000 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FAAC58), color-stop(100%,#FF4000)); /* Safari 4+, Chrome 2+ */  
+
+background: linear-gradient(to bottom, #FAAC58 0, #FF4000 100%);
+
+
+margin:20px 0px;
+word-break:break-all;
+
+
+
+
+
+}
+
+
+
+
 
 #adsendbutton {
 
@@ -261,6 +289,29 @@ margin-bottom: 0px;
 
 
 }
+
+.autorad_found {
+
+background: -ms-linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+background: -moz-linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+background: -o-linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+background: -webkit-linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #353e4a), color-stop(100%, #1b1e26)); /* Safari 4+, Chrome 2+ */  
+
+background: linear-gradient(to bottom, #353e4a 0, #1b1e26 100%);
+
+color:white;
+text-align: center;
+text-shadow:#706d6d 1px 1px 1px;
+
+padding:5px;
+margin-top: 132px;
+margin-bottom: 0px;
+
+
+
+}
+
 
 #contenedor {
 

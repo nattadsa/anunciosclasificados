@@ -5,7 +5,6 @@
 
 <?php
 
-error_reporting(E_ALL ^ E_NOTICE);
 
 
  include("header.php");
@@ -13,6 +12,8 @@ error_reporting(E_ALL ^ E_NOTICE);
 
  ?>
 
+
+<div id="search_results"></div>
 
 
 

@@ -8,6 +8,23 @@ include("confirmacionlog.php");
 
 include("adclass.php");
 
+include_once $_SERVER['DOCUMENT_ROOT'] . '/phpclases/securimage/securimage.php';
+
+ 
+
+$securimage = new Securimage();
+
+if ($securimage->check($_POST['captcha_code']) == false) {
+  // the code was incorrect
+  // you should handle the error so that the form processor doesn't continue
+
+  // or you can use the following code if there is no validation or you do not know how
+  echo "El código de seguridad que introdujo es incorrecto<br /><br />";
+  echo "Por favor <a href='javascript:history.go(-1)'>regrese</a> e intente nuevamente";
+  exit;
+}
+
+
 session_start();
 
 $nuevoanuncio = new Anuncios();

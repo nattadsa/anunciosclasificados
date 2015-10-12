@@ -23,6 +23,12 @@ class Usuario {
 
 //metodos
 
+           public function getcorreo(){
+ 
+            return $this->correo;          
+
+           }
+
 
 public function conectarse()
 
@@ -52,12 +58,57 @@ return $conectar;
 
 }
 
- public function mostrardatos(){
+ public function mostrardatosEdit(){
 
-          echo "<b>Nombre: </b>" . $this->nombre . "<br>" . "<b>Apellido:</b>" . $this->apellido . "<br>" . "<b>Correo electrónico:</b> " . $this->correo . "<br>" . "<b>Nombre de Usuario: </b>". $this->usuario ; 
+         echo '
 
+
+         <div class="row" id="mdrow">
+
+
+            <div class="col-md-3" ></div> 
+            <div class="col-md-6" id="mdusuariocol"><div id="editstatus"></div>Nombre:<span class="dusuario" id="mdnombre">'.$this->nombre.'</span><span id="nomdbstatus"></span><br>Apellido: <span class="dusuario" id="mdapellido">'.$this->apellido.'</span><span id="apdbstatus"></span><br>Nombre de usuario: <span class="dusuario" id="mdusuario">'.$this->usuario.'</span><span id="usdbstatus"></span><br>Correo Electrónico: <span class="dusuario" id="mdcorreo">'.$this->correo.'</span><span id="codbstatus"></span> <br>
+
+              <input type="submit" id="duedit" class="editubtn" name="duedit" value="Editar datos"><div class="editubtn" id="dusave"></div>
+
+               </div>
+
+            <div class="col-md-3"></div> 
+            
+
+
+  
+           
+
+
+         </div> ';
 
  }
+
+public function mostrardatos(){
+
+         echo '
+
+
+
+
+            <div id="mdusuariocol"><div id="editstatus"></div>Nombre:<span class="dusuario" id="mdnombre">'.$this->nombre.'</span><span id="nomdbstatus"></span><br>Apellido: <span class="dusuario" id="mdapellido">'.$this->apellido.'</span><span id="apdbstatus"></span><br>Nombre de usuario: <span class="dusuario" id="mdusuario">'.$this->usuario.'</span><span id="usdbstatus"></span><br>Correo Electrónico: <span class="dusuario" id="mdcorreo">'.$this->correo.'</span><span id="codbstatus"></span> <br>
+
+
+
+            
+
+
+  
+           
+
+
+          ';
+
+ }
+
+
+
 
  public function registrodb(){
 
@@ -203,6 +254,114 @@ public function obtenerDatos($usuario){
   return $datos;
 
 
+}
+
+public function buscarUsuario($usuario){
+
+  $conexion = $this->conectarse();
+  $consultaUsuario = "SELECT * FROM phpclases_table WHERE usuario='$usuario'";
+  $ejecutarConsultaUsuario = $conexion->query(utf8_encode($consultaUsuario));
+
+  if($ejecutarConsultaUsuario->num_rows ==1){
+
+   return true;
+
+
+  }
+
+  else {
+
+  return false;
+
+
+  }
+
+
+
+
+
+}
+
+public function buscarCorreo($correo){
+
+  $conexion = $this->conectarse();
+  $consultaCorreo = "SELECT * FROM phpclases_table WHERE email='$correo'";
+  $ejecutarConsultaCorreo = $conexion->query(utf8_encode($consultaCorreo));
+
+  if($ejecutarConsultaCorreo->num_rows ==1){
+
+   return true;
+
+
+  }
+
+  else {
+
+  return false;
+
+
+
+  }
+
+  
+
+
+
+}
+
+public function actualizarDatos($nombre,$apellido,$usuario,$correo){
+
+    
+    $this->correo = $correo;
+ 
+   
+
+     $conexion = $this->conectarse();
+     $conexion->query("SET NAMES 'utf8'");
+
+     
+     if($nombre!=$this->nombre){
+
+       $this->nombre = $nombre;
+      $consultaNombre = "UPDATE phpclases_table SET nombre='$nombre' WHERE email='$this->correo'";
+     $ejecutarConsultaNombre = $conexion->query(utf8_encode($consultaNombre));
+
+
+
+     }
+
+     if($apellido!=$this->apellido){
+
+
+       $this->apellido = $apellido;
+      $consultaApellido = "UPDATE phpclases_table SET apellido='$apellido' WHERE email='$this->correo'";
+     $ejecutarConsultaApellido = $conexion->query(utf8_encode($consultaApellido));
+
+
+      
+     }
+
+     if($usuario!=$this->usuario && $this->buscarUsuario($usuario)==false){
+    
+      $this->usuario = $usuario;
+      $consultaUsuario = "UPDATE phpclases_table SET usuario='$usuario' WHERE email='$this->correo'";
+     $ejecutarConsultaUsuario = $conexion->query(utf8_encode($consultaUsuario));
+
+     echo '<p>Sus datos se han actualizado. Recuerde logearse con sus nuevas credenciales en su próximo ingreso al sistema.</p>';
+      
+     }
+
+     else {
+
+     echo '<p id="editerror">No se han podido actualizar sus datos, su nombre de usuario ya está siendo usado o sus datos ya están actualizados.</p>';
+
+     }
+
+     
+
+
+
+      
 }
 
 }

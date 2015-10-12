@@ -4,7 +4,30 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 
 switch ($_SERVER["REQUEST_URI"]) {
-   case '/phpclases/index.php':
+   
+
+
+
+
+
+
+
+  
+case '/phpclases/index.php':
+     $enlace1= "Ingrese al Sistema";
+     $enlace2= "Registro";
+     $link1= "loginform.php";
+     $link2= "registroform.php";
+     $home= "index.php";
+     $crearAd="";
+     $mensaje="Bienvenido al sistema. ";
+
+
+
+
+     break;
+
+     case '/phpclases/':
      $enlace1= "Ingrese al Sistema";
      $enlace2= "Registro";
      $link1= "loginform.php";
@@ -293,6 +316,68 @@ switch ($_SERVER["REQUEST_URI"]) {
     <script src="js/jquery.js"></script>
      <script src="js/bootstrap.js"></script>
 
+      <script type="text/javascript">
+
+      $(document).ready(function(){
+
+
+         $("#search_frm").submit(function(event){
+
+        event.preventDefault();
+
+
+
+        });
+
+
+
+
+        $("#search_txt").on("input", function(){
+
+        var keyword= $("#search_txt").val();
+
+
+         
+
+        $.ajax({
+        url: "search.php",
+        type: "POST",
+        data: {searchQuery: keyword },
+        success: function(data){
+
+        $("#search_results").html(data);
+       
+                   
+
+
+
+
+        }
+        });
+
+
+
+
+
+});
+
+     
+
+
+
+
+
+
+
+
+      });
+
+
+
+
+
+      </script>
+
 
 
 </head>
@@ -372,11 +457,10 @@ switch ($_SERVER["REQUEST_URI"]) {
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form id="search_frm" class="navbar-form navbar-left" role="search" enctype="application/x-www-form-urlencoded">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Búsqueda de anuncios">
+          <input type="text" name="search_txt" id="search_txt" class="form-control" placeholder="Búsqueda de anuncios">
         </div>
-        <button type="submit" class="btn btn-default">Enviar</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href=<?php echo $crearLink ?>><?php echo $crearAd ?></a></li>
@@ -390,5 +474,6 @@ switch ($_SERVER["REQUEST_URI"]) {
 
 
 
+<div id="search_results"></div>
 
      
