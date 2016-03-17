@@ -1,7 +1,5 @@
  <?php include("header.php");
-
-
-
+session_start();//necesário ir antes de cualquier html da error de lo contrario
  ?>
 
  <?php
@@ -38,7 +36,7 @@ $usuarionuevo->registro($postnombre,$postapellido,$postcorreo,$postusuario,$post
 
 <?php $usuarionuevo->mostrardatos();
 
-session_start();
+
 
 $_SESSION['usuarionuevo']  = $usuarionuevo;
 

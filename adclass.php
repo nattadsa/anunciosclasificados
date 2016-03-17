@@ -90,8 +90,10 @@ return $conectar;
               
 
             
+if($ejecutar_consulta){
+    //Aquí pones todo el código del ciclo while sirve por si no hay nada en la BD
 
-              while ($resultado = $ejecutar_consulta->fetch_assoc()) {
+              while ($resultado = mysqli_fetch_assoc($ejecutar_consulta)) {
                
                  
                 
@@ -124,7 +126,7 @@ return $conectar;
 
              
                }
-
+}
                 
 
              
@@ -145,8 +147,8 @@ return $conectar;
 
              $i= 0;
              $anuncioid =[];
-
-          while ($resultado = $ejecutar_consulta->fetch_assoc()) {
+if($ejecutar_consulta){
+          while ($resultado = mysqli_fetch_assoc($ejecutar_consulta)) {
                
                  $i++;
 
@@ -181,7 +183,7 @@ return $conectar;
 
              
                }
-
+}
                return  $anuncioid;
            
 
@@ -208,8 +210,8 @@ return $conectar;
           }    
 
              
-
-          while ($resultado = $ejecutar_consulta->fetch_assoc()) {
+if($ejecutar_consulta){
+          while ($resultado = mysqli_fetch_assoc($ejecutar_consulta)) {
                
                  $i++;
 
@@ -246,7 +248,7 @@ return $conectar;
 
              
                }
-
+}
                return  $anuncioid;
            
 
@@ -260,7 +262,8 @@ return $conectar;
           $conexion = $this->conectarse();
           $consulta = "SELECT * FROM anuncios WHERE anuncioid='$anuncioid'";
           $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
-          $resultado = $ejecutar_consulta->fetch_assoc();
+		  if($ejecutar_consulta){
+          $resultado = mysqli_fetch_assoc($ejecutar_consulta);
                
                  
 
@@ -319,7 +322,7 @@ return $conectar;
 
 
               ';
-
+		  }
              
                }
 

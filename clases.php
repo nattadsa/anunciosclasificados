@@ -129,7 +129,8 @@ $ejecutarConsultaUsuario = $conexion->query(utf8_encode($consultaUsuario));
 
         } else {
               $conexion->query("SET NAMES 'utf8'");
-              $consulta = "INSERT INTO phpclases_table(nombre,apellido,email,usuario,password) VALUES ('$this->nombre','$this->apellido','$this->correo','$this->usuario','$this->password')";
+              $consulta = "INSERT INTO phpclases_table(nombre,apellido,email,usuario,password) VALUES ('{$this->nombre}','{$this->apellido}','{$this->correo}','{$this->usuario}','{$this->password}')";
+			  }
               $ejecutar_consulta= $conexion->query(utf8_encode($consulta));
 
               if ($ejecutar_consulta){
@@ -147,24 +148,6 @@ $ejecutarConsultaUsuario = $conexion->query(utf8_encode($consultaUsuario));
 
 
         }
-
-
-} else {
-
-echo "Ha ocurrido un problema de conexión a la base de datos";
-
-
-}
-
-
-
-
-
-
-
-
-
-
 
 
  }
